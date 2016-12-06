@@ -1,0 +1,36 @@
+body{
+	background-image: url('forest-background.jpg');
+}
+
+
+.encounter{
+	color: white;
+	font-family: Arial;
+	font-size:  54px;
+	text-align: center;
+}
+
+.btn{
+	font-family: Arial;
+	font-size: 30px;
+}
+
+#yay{
+	color: green;
+}
+
+#nay{
+	color: red;
+}
+
+.dice-pair{
+	position: center;
+}
+
+.roll-button{
+	position: relative;
+}
+
+.hero{
+	float: right;
+}

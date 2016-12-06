@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Fight the Dragon
+	</title>
+
+	<link rel="stylesheet" type="text/css" href="dragon.css">
+
+</head>
+<body>
+
+	<div id ="game">
+
+		<img name="dragon" src="dragon.png">
+		<div class="encounter">You encountered a dragon. Do you fight?</div>
+			<button type="button" class="btn" id="yay">Of course!</button>
+			<button type="button" class="btn" id="nay">No way!</button>
+
+		<img name="hero" src="cat.jpg" class="hero">
+
+		<div class="dice-pair"></div>
+			<img name="die1" src="d1.gif">
+			<img name="die2" src="d1.gif">
+
+		<input type="button" class="roll-button" onclick="rollDice(); class=" value="Roll the dice!">
+
+		<div id="userRoll"></div>
+
+	</div>
+
+	<script type="text/javascript">
+		function rollDice(){
+			//console.log("test");
+			var randomDie1 = Math.ceil(Math.random() * 6);
+			var randomDie2 = Math.ceil(Math.random() * 6);
+
+			console.log(randomDie1);
+			console.log(randomDie2);
+
+			document.images.die1.src = "d" + randomDie1 + ".gif";
+			document.images.die2.src = "d" + randomDie1 + ".gif";
+
+			document.getElementByID('userRoll').innerHTML = randomDie1 + randomDie2;
+
+			if(randomDie1 + randomDie2 > 8){
+				//add image of fight
+				document.images.dragon.src=""
+			} else{
+				//add image of defeated character
+			}
+		}
+
+	</script>
+
+</body>
+</html>
