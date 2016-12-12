@@ -1,0 +1,251 @@
+<script type="text/javascript">
+
+// This is a blueprint for player objects. This is a constructor function. This constructor is called "Player." By attaching a function to the reportPPM object, you can easily find the PPM.
+function Player(name, position, avgM, avgP, avgR, starter){
+	this.name = name;
+	this.position = position;
+	this.avgMinutesPlayed = avgM;
+	this.avgPoints = avgP;
+	this.avgRebounds = avgR;
+	this.starter = starter;
+	// this.reportPPM = function(){
+	// 	return this.avgPoints / this.avgMinutesPlayed;
+	// }
+}
+
+Player.prototype.species = "human";
+
+
+// In the console, you can type player1.reportPPM() to see player1's PPM thanks to the function above. If you type player1.avgPoints = 19.1, you will still be able to get the PPM using 19.1.
+
+Player.prototype.reportPPM = function(){
+	return this.avgPoints / this.avgMinutesPlayed;
+}
+
+
+
+// This is an object. We are making a constructor object. We're making a new player. Whatever is created will be called "player1".
+var player1 = new Player('Paul Millsap', 'PF', 36, 16.4, 9.4, true);
+var player2 = new Player('Jeff Teague', 'PF', 28.6, 15.6, 1.9, true);
+var player3 = new Player('Al Horford', 'C', 32, 13.2, 6.8, true, "martian");
+
+// player1 and player2 will have species: human but player 3 will actually have species: "martian" because your input was overwritten. If you don't provide an input, it just use what you originally set in.
+
+//return player.avgPoints / player.avgMinutesPlayed;
+
+// Lines 24-27 can be replaced with line 12. Two ways of doing the same thing. Lines 24-27 is the procedural method.
+// function figurePPM(player){
+// 	return player.avgPoints / player.avgMinutesPlayed
+// }
+// figurePPM();
+
+
+	var players = [
+		
+		
+		 {
+		   name: 'Al Horford',
+		   position: 'C',
+		   avgMinutesPlayed: 32,
+		   avgPoints: 13.2,
+		   avgRebounds: 6.8,
+		   starter: true
+		 },
+		 {
+		   name: 'Kent Bazemore',
+		   position: 'SF',
+		   avgMinutesPlayed: 31.8,
+		   avgPoints: 12,
+		   avgRebounds: 6.6,
+		   starter: true
+		 },
+		 {
+		    name: 'Kyle Korver',
+		    position: 'SG',
+		    avgMinutesPlayed: 32.4,
+		    avgPoints: 11.2,
+		    avgRebounds: 4.9,
+		    starter: true
+		  },
+		  {
+		    name: 'Dennis Schroder',
+		    position: 'PG',
+		    avgMinutesPlayed: 18.3,
+		    avgPoints: 10.7,
+		    avgRebounds: 1.8,
+		    starter: false
+		  },
+		  {
+		    name: 'Kris Humphries',
+		    position: 'PF',
+		    avgMinutesPlayed: 14.7,
+		    avgPoints: 9.7,
+		    avgRebounds: 5.7,
+		    starter: false
+		  },
+		  {
+		    name: 'Mike Scott',
+		    position: 'PF',
+		    avgMinutesPlayed: 17.6,
+		    avgPoints: 7.0,
+		    avgRebounds: 3.6,
+		    starter: false
+		  },
+		  {
+		    name: 'Thabo Sefolosha',
+		    position: 'SF',
+		    avgMinutesPlayed: 18.9,
+		    avgPoints: 4.8,
+		    avgRebounds: 3.9,
+		    starter: false
+		  },
+		  {
+		    name: 'Mike Muscala',
+		    position: 'PF',
+		    avgMinutesPlayed: 7.4,
+		    avgPoints: 2.7,
+		    avgRebounds: 1.9,
+		    starter: false
+		  },
+		  {
+		    name: 'Tim Hardaway Jr.',
+		    position: 'SG',
+		    avgMinutesPlayed: 9.7,
+		    avgPoints: 2.2,
+		    avgRebounds: 1.0,
+		    starter: false
+		  },
+		  {
+		    name: 'Lamar Patterson',
+		    position: 'SG',
+		    avgMinutesPlayed: 5.0,
+		    avgPoints: 1.5,
+		    avgRebounds: 1.3,
+		    starter: false
+		  },
+		  {
+		    name: 'Kirk Hinrich',
+		    position: 'SG',
+		    avgMinutesPlayed: 4.5,
+		    avgPoints: 0.8,
+		    avgRebounds: 0.7,
+		    starter: false
+		  }
+		];
+	
+
+		
+		
+
+
+// // Print the average playing time of the players.
+// var avgOfAvgMinutes = 0;
+// 	for(i=0; i<players.length; i++){
+// 		avgOfAvgMinutes += players[i].avgMinutesPlayed;
+// 		//console.log(players[i].avgMinutesPlayed);
+// 	}
+// console.log("Average minutes played: " + parseInt(avgOfAvgMinutes/players.length));
+
+
+
+// //Print the average playing time of the starters.
+// 	var totalStarts = 0;
+// 	var totalStarterTime = 0;
+// 	for(i=0; i<players.length; i++){
+// 		if(players[i].starter == true){
+// 			totalStarters++;
+// 			totalStarterTime+= players[i].avgMinutesPlayed;
+// 		}
+// 	}
+// 	console.log("Average minutes played by starters: " + parseInt(avgOfAvgMinutes/players.length));
+		
+
+
+
+// // * Print the average playing time of the bench players.
+// var totalStarts = 0;
+// var totalStarterTime = 0;
+// var totalBench = 0;
+// var totalBenchTime = 0;
+
+// for(i=0; i<players.length; i++){
+// 		if(players[i].starter == true){
+// 			totalStarters++;
+// 			totalStarterTime+= players[i].avgMinutesPlayed;
+// 		} else{
+// 			console.log("Average minutes played by players: " + parseInt(totalStarterTime/totalStarters));
+// 		}
+// 	}
+
+
+
+// // * Create an array of the names of each player.
+// var names = [];
+// for (i=0; i<players.lenght; i++){
+// 	names.push(players[i]);
+// 	}
+// 	console.log(names);
+
+	
+
+
+// // * Create an array of the names of the players who average more than 10 points per game.
+// var moreThanTen = [];
+// for (i=0; i<players.lenght; i++){
+// 	if(players[i].avgPoints > 10){
+// 		moreThanTen.push(players[i].name);
+// 	}
+// }
+// console.log(moreThanTen);
+
+		
+// // * Create an array of the names of the players who average more than 5 rebounds per game.
+// var moreThanFiveRebounds = [];
+// for (i=0; i<players.lenght; i++){
+// 	if(players[i].avgPoints > 5){
+// 		moreThanFiveRebounds.push(players[i].name);
+// 	}
+// }
+// console.log(moreThanFiveRebounds);
+
+
+// // * Who is the player with the most points per minute played? Write a program to find that out.
+// var highScorer = "Rish";
+// var highScorerPerMinute = 0;
+// for (i=0; i<players.lenght; i++){
+// 	if((players[i].avgPoints / avgMinutesPlayed) > highScorerPerMinute) {
+// 		highScorer = players[i].name;
+// 		highScorerPerMinute = players[i].avgPoints / avgMinutesPlayed;
+// 	}
+// }
+// // alternate way to do it: 
+// // function findPPM(){
+// // 	for (i=0; i<players.lenght; i++){
+// // 		players[i].ppm = players[i].avgPoints / players[i].avgMinutesPlayed;
+// // 	}
+// // }
+// // findPPM();
+
+
+
+
+
+
+// // * Based on this data, what is the average points score for the team as a whole? 
+// var averageTeamPoints = 0;
+// for (i=0; i<players.length; i++){
+// 	averageTeamPoints += players[i].avgPoints;
+// }
+// console.log(averageTeamPoints / players.length);
+
+
+
+</script>
+
+
+
+
+
+
+
+
